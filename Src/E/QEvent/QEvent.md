@@ -53,11 +53,11 @@ Qt的主事件循环 ([QCoreApplication::exec](https://doc.qt.io/qt-5/qcoreappli
 
 通常这些事件由底层窗口系统自动传递给应用层 ([spontaneous](https://doc.qt.io/qt-5/qevent.html#spontaneous)() returns `true`), 但通过QCoreApplication::sendEvent](https://doc.qt.io/qt-5/qcoreapplication.html#sendEvent)() and [QCoreApplication::postEvent](https://doc.qt.io/qt-5/qcoreapplication.html#postEvent)() ([spontaneous](https://doc.qt.io/qt-5/qevent.html#spontaneous)() returns `false`)这两个函数也可以手动的传递事件.
 
-[QObjects](https://doc.qt.io/qt-5/qobject.html) 通过调用它们的 [QObject::event](https://doc.qt.io/qt-5/qobject.html#event)()函数来接收事件. 此函数被声明为虚函数，它可以在QObject子类中被重新实现，从而能做到自定义事件处理过程以及增加额外的事件类型; [QWidget::event](https://doc.qt.io/qt-5/qwidget.html#event)() is a notable example. By default, events are dispatched to event handlers like [QObject::timerEvent](https://doc.qt.io/qt-5/qobject.html#timerEvent)() and [QWidget::mouseMoveEvent](https://doc.qt.io/qt-5/qwidget.html#mouseMoveEvent)(). [QObject::installEventFilter](https://doc.qt.io/qt-5/qobject.html#installEventFilter)() allows an object to intercept events destined for another object.
+[QObjects](https://doc.qt.io/qt-5/qobject.html) 通过调用它们的 [QObject::event](https://doc.qt.io/qt-5/qobject.html#event)()函数来接收事件. 此函数被声明为虚函数，它可以在QObject子类中被重新实现，从而能做到自定义事件处理过程以及增加额外的事件类型; [QWidget::event](https://doc.qt.io/qt-5/qwidget.html#event)() 是一个不错的例子. 默认情况下, 事件会被分发到事件回调函数中，如 [QObject::timerEvent](https://doc.qt.io/qt-5/qobject.html#timerEvent)() 与 [QWidget::mouseMoveEvent](https://doc.qt.io/qt-5/qwidget.html#mouseMoveEvent)(). [QObject::installEventFilter](https://doc.qt.io/qt-5/qobject.html#installEventFilter)() 允许一个对象拦截发往另一对象的事件.
 
-The basic QEvent contains only an event type parameter and an "accept" flag. The accept flag set with [accept](https://doc.qt.io/qt-5/qevent.html#accept)(), and cleared with [ignore](https://doc.qt.io/qt-5/qevent.html#ignore)(). It is set by default, but don't rely on this as subclasses may choose to clear it in their constructor.
+QEevent基类仅仅包含一个事件类型参数与一个"accept"标志. “accept”标准可以通过 [accept](https://doc.qt.io/qt-5/qevent.html#accept)()被设置, 或者通过[ignore](https://doc.qt.io/qt-5/qevent.html#ignore)()来被清除. 该标准会被默认设置为true, 但不要想着依赖这个默认设置机制，因为子类很可能会在其构造函数中清除此标志。
 
-Subclasses of QEvent contain additional parameters that describe the particular event.
+QEvent的那些子类含有额外的一些参数，这些参数是专门为这些子事件类型而设定的.
 
 **See also** [QObject::event](https://doc.qt.io/qt-5/qobject.html#event)(), [QObject::installEventFilter](https://doc.qt.io/qt-5/qobject.html#installEventFilter)(), [QCoreApplication::sendEvent](https://doc.qt.io/qt-5/qcoreapplication.html#sendEvent)(), [QCoreApplication::postEvent](https://doc.qt.io/qt-5/qcoreapplication.html#postEvent)(), and [QCoreApplication::processEvents](https://doc.qt.io/qt-5/qcoreapplication.html#processEvents)().
 
