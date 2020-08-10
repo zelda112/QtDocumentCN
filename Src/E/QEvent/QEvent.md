@@ -61,46 +61,46 @@ QEvent的那些子类含有额外的一些参数，这些参数是专门为这�
 
 **See also** [QObject::event](https://doc.qt.io/qt-5/qobject.html#event)(), [QObject::installEventFilter](https://doc.qt.io/qt-5/qobject.html#installEventFilter)(), [QCoreApplication::sendEvent](https://doc.qt.io/qt-5/qcoreapplication.html#sendEvent)(), [QCoreApplication::postEvent](https://doc.qt.io/qt-5/qcoreapplication.html#postEvent)(), and [QCoreApplication::processEvents](https://doc.qt.io/qt-5/qcoreapplication.html#processEvents)().
 
-## Member Type Documentation
+## 成员类型说明
 
-### enum QEvent::Type
+### 枚举类型QEvent::Type
 
-This enum type defines the valid event types in Qt. The event types and the specialized classes for each type are as follows:
+此枚举类型在Qt中被定义为一系列的事件类型. 这些事件类型以及该事件类型所属的特定类列表如下所示:
 
-| Constant                                   | Value                 | Description                                                  |
+| 枚举常量                                   | 值                    | 说明                                                         |
 | ------------------------------------------ | --------------------- | ------------------------------------------------------------ |
-| `QEvent::None`                             | `0`                   | Not an event.                                                |
-| `QEvent::ActionAdded`                      | `114`                 | A new action has been added ([QActionEvent](https://doc.qt.io/qt-5/qactionevent.html)). |
-| `QEvent::ActionChanged`                    | `113`                 | An action has been changed ([QActionEvent](https://doc.qt.io/qt-5/qactionevent.html)). |
-| `QEvent::ActionRemoved`                    | `115`                 | An action has been removed ([QActionEvent](https://doc.qt.io/qt-5/qactionevent.html)). |
-| `QEvent::ActivationChange`                 | `99`                  | A widget's top-level window activation state has changed.    |
-| `QEvent::ApplicationActivate`              | `121`                 | This enum has been deprecated. Use ApplicationStateChange instead. |
-| `QEvent::ApplicationActivated`             | `ApplicationActivate` | This enum has been deprecated. Use ApplicationStateChange instead. |
-| `QEvent::ApplicationDeactivate`            | `122`                 | This enum has been deprecated. Use ApplicationStateChange instead. |
-| `QEvent::ApplicationFontChange`            | `36`                  | The default application font has changed.                    |
-| `QEvent::ApplicationLayoutDirectionChange` | `37`                  | The default application layout direction has changed.        |
-| `QEvent::ApplicationPaletteChange`         | `38`                  | The default application palette has changed.                 |
-| `QEvent::ApplicationStateChange`           | `214`                 | The state of the application has changed.                    |
-| `QEvent::ApplicationWindowIconChange`      | `35`                  | The application's icon has changed.                          |
-| `QEvent::ChildAdded`                       | `68`                  | An object gets a child ([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
+| `QEvent::None`                             | `0`                   | 并非一个事件.                                                |
+| `QEvent::ActionAdded`                      | `114`                 | 添加了某个新的行为（action）([QActionEvent](https://doc.qt.io/qt-5/qactionevent.html)). |
+| `QEvent::ActionChanged`                    | `113`                 | 某个行为（action）发生了改变 ([QActionEvent](https://doc.qt.io/qt-5/qactionevent.html)). |
+| `QEvent::ActionRemoved`                    | `115`                 | 某个行为被移除([QActionEvent](https://doc.qt.io/qt-5/qactionevent.html)). |
+| `QEvent::ActivationChange`                 | `99`                  | 某置顶窗口组件的活动状态（activation state)发生了改变.       |
+| `QEvent::ApplicationActivate`              | `121`                 | 此枚举常量已经不再使用. 请使用枚举常量ApplicationStateChange. |
+| `QEvent::ApplicationActivated`             | `ApplicationActivate` | 此枚举常量已经不再使用. 请使用枚举常量ApplicationStateChange. |
+| `QEvent::ApplicationDeactivate`            | `122`                 | 此枚举常量已不再使用. 请使用枚举常量ApplicationStateChange.  |
+| `QEvent::ApplicationFontChange`            | `36`                  | 应用程序默认的字体属性发生了改变.                            |
+| `QEvent::ApplicationLayoutDirectionChange` | `37`                  | 应用程序默认的布局属性发生了改变.                            |
+| `QEvent::ApplicationPaletteChange`         | `38`                  | 应用程序默认的调色板属性发生了改变.                          |
+| `QEvent::ApplicationStateChange`           | `214`                 | 应用程序的状态发生了改变.                                    |
+| `QEvent::ApplicationWindowIconChange`      | `35`                  | 应用程序的图标发生了改变.                                    |
+| `QEvent::ChildAdded`                       | `68`                  | An object gets a child某个对象获得了一个孩子 ([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
 | `QEvent::ChildPolished`                    | `69`                  | A widget child gets polished ([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
-| `QEvent::ChildRemoved`                     | `71`                  | An object loses a child ([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
-| `QEvent::Clipboard`                        | `40`                  | The clipboard contents have changed.                         |
-| `QEvent::Close`                            | `19`                  | Widget was closed ([QCloseEvent](https://doc.qt.io/qt-5/qcloseevent.html)). |
-| `QEvent::CloseSoftwareInputPanel`          | `200`                 | A widget wants to close the software input panel (SIP).      |
-| `QEvent::ContentsRectChange`               | `178`                 | The margins of the widget's content rect changed.            |
-| `QEvent::ContextMenu`                      | `82`                  | Context popup menu ([QContextMenuEvent](https://doc.qt.io/qt-5/qcontextmenuevent.html)). |
-| `QEvent::CursorChange`                     | `183`                 | The widget's cursor has changed.                             |
-| `QEvent::DeferredDelete`                   | `52`                  | The object will be deleted after it has cleaned up ([QDeferredDeleteEvent](https://doc.qt.io/qt-5/qdeferreddeleteevent.html)) |
-| `QEvent::DragEnter`                        | `60`                  | The cursor enters a widget during a drag and drop operation ([QDragEnterEvent](https://doc.qt.io/qt-5/qdragenterevent.html)). |
-| `QEvent::DragLeave`                        | `62`                  | The cursor leaves a widget during a drag and drop operation ([QDragLeaveEvent](https://doc.qt.io/qt-5/qdragleaveevent.html)). |
-| `QEvent::DragMove`                         | `61`                  | A drag and drop operation is in progress ([QDragMoveEvent](https://doc.qt.io/qt-5/qdragmoveevent.html)). |
-| `QEvent::Drop`                             | `63`                  | A drag and drop operation is completed ([QDropEvent](https://doc.qt.io/qt-5/qdropevent.html)). |
-| `QEvent::DynamicPropertyChange`            | `170`                 | A dynamic property was added, changed, or removed from the object. |
-| `QEvent::EnabledChange`                    | `98`                  | Widget's enabled state has changed.                          |
-| `QEvent::Enter`                            | `10`                  | Mouse enters widget's boundaries ([QEnterEvent](https://doc.qt.io/qt-5/qenterevent.html)). |
-| `QEvent::EnterEditFocus`                   | `150`                 | An editor widget gains focus for editing. `QT_KEYPAD_NAVIGATION` must be defined. |
-| `QEvent::EnterWhatsThisMode`               | `124`                 | Send to toplevel widgets when the application enters "What's This?" mode. |
+| `QEvent::ChildRemoved`                     | `71`                  | 某个对象失去了它的一个孩子([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
+| `QEvent::Clipboard`                        | `40`                  | 剪贴板内容发生了改变.                                        |
+| `QEvent::Close`                            | `19`                  | Widget被关闭. ([QCloseEvent](https://doc.qt.io/qt-5/qcloseevent.html)). |
+| `QEvent::CloseSoftwareInputPanel`          | `200`                 | 某个widget想要关闭输入面板(software input panel).            |
+| `QEvent::ContentsRectChange`               | `178`                 | The margins of the widget's content rect changedwidets内容区域的边距发生了改变. |
+| `QEvent::ContextMenu`                      | `82`                  | 上下文弹出菜单（Context pop menu）([QContextMenuEvent](https://doc.qt.io/qt-5/qcontextmenuevent.html)). |
+| `QEvent::CursorChange`                     | `183`                 | widget的光标(cursor)发生了改变.                              |
+| `QEvent::DeferredDelete`                   | `52`                  | The object will be deleted after it has cleaned up此对象将会在其被清除后自动被释放所占内存空间.([QDeferredDeleteEvent](https://doc.qt.io/qt-5/qdeferreddeleteevent.html)) |
+| `QEvent::DragEnter`                        | `60`                  | The cursor enters a widget during a drag and drop operation在拖，拽操作过程中鼠标光标进入了widget区域([QDragEnterEvent](https://doc.qt.io/qt-5/qdragenterevent.html)). |
+| `QEvent::DragLeave`                        | `62`                  | The cursor leaves a widget during a drag and drop operation在拖，拽操作过程中鼠标光标离开widget区域([QDragLeaveEvent](https://doc.qt.io/qt-5/qdragleaveevent.html)). |
+| `QEvent::DragMove`                         | `61`                  | 正在发生拖，拽操作([QDragMoveEvent](https://doc.qt.io/qt-5/qdragmoveevent.html)). |
+| `QEvent::Drop`                             | `63`                  | 拖，拽操作已完成 ([QDropEvent](https://doc.qt.io/qt-5/qdropevent.html)). |
+| `QEvent::DynamicPropertyChange`            | `170`                 | A dynamic property was added, changed, or removed from the object某动态属性被添加进某个对象，或从该对象被删除以及此动态属性被改变. |
+| `QEvent::EnabledChange`                    | `98`                  | Widget的可用状态发生了改变.                                  |
+| `QEvent::Enter`                            | `10`                  | 鼠标进入了widget边界 ([QEnterEvent](https://doc.qt.io/qt-5/qenterevent.html)). |
+| `QEvent::EnterEditFocus`                   | `150`                 | 某个编辑类widget获得了输入焦点.需要定义`QT_KEYPAD_NAVIGATION`. |
+| `QEvent::EnterWhatsThisMode`               | `124`                 | Send to toplevel widgets when the application enters "What's This?" mode当应用进入“What's This”模式时会接收到此事件类型. |
 | `QEvent::Expose`                           | `206`                 | Sent to a window when its on-screen contents are invalidated and need to be flushed from the backing store. |
 | `QEvent::FileOpen`                         | `116`                 | File open request ([QFileOpenEvent](https://doc.qt.io/qt-5/qfileopenevent.html)). |
 | `QEvent::FocusIn`                          | `8`                   | Widget or Window gains keyboard focus ([QFocusEvent](https://doc.qt.io/qt-5/qfocusevent.html)). |
