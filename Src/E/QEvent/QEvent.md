@@ -83,82 +83,82 @@ QEvent的那些子类含有额外的一些参数，这些参数是专门为这�
 | `QEvent::ApplicationStateChange`           | `214`                 | 应用程序的状态发生了改变.                                    |
 | `QEvent::ApplicationWindowIconChange`      | `35`                  | 应用程序的图标发生了改变.                                    |
 | `QEvent::ChildAdded`                       | `68`                  | An object gets a child某个对象获得了一个孩子 ([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
-| `QEvent::ChildPolished`                    | `69`                  | A widget child gets polished ([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
+| `QEvent::ChildPolished`                    | `69`                  | 某个子widget被重置 ([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
 | `QEvent::ChildRemoved`                     | `71`                  | 某个对象失去了它的一个孩子([QChildEvent](https://doc.qt.io/qt-5/qchildevent.html)). |
 | `QEvent::Clipboard`                        | `40`                  | 剪贴板内容发生了改变.                                        |
 | `QEvent::Close`                            | `19`                  | Widget被关闭. ([QCloseEvent](https://doc.qt.io/qt-5/qcloseevent.html)). |
 | `QEvent::CloseSoftwareInputPanel`          | `200`                 | 某个widget想要关闭输入面板(software input panel).            |
-| `QEvent::ContentsRectChange`               | `178`                 | The margins of the widget's content rect changedwidets内容区域的边距发生了改变. |
+| `QEvent::ContentsRectChange`               | `178`                 | Widets内容区域的边距发生了改变.                              |
 | `QEvent::ContextMenu`                      | `82`                  | 上下文弹出菜单（Context pop menu）([QContextMenuEvent](https://doc.qt.io/qt-5/qcontextmenuevent.html)). |
 | `QEvent::CursorChange`                     | `183`                 | widget的光标(cursor)发生了改变.                              |
-| `QEvent::DeferredDelete`                   | `52`                  | The object will be deleted after it has cleaned up此对象将会在其被清除后自动被释放所占内存空间.([QDeferredDeleteEvent](https://doc.qt.io/qt-5/qdeferreddeleteevent.html)) |
-| `QEvent::DragEnter`                        | `60`                  | The cursor enters a widget during a drag and drop operation在拖，拽操作过程中鼠标光标进入了widget区域([QDragEnterEvent](https://doc.qt.io/qt-5/qdragenterevent.html)). |
+| `QEvent::DeferredDelete`                   | `52`                  | 此对象将会在其被清除后自动被释放所占内存空间.([QDeferredDeleteEvent](https://doc.qt.io/qt-5/qdeferreddeleteevent.html)) |
+| `QEvent::DragEnter`                        | `60`                  | 在拖，拽操作过程中光标进入了widget区域([QDragEnterEvent](https://doc.qt.io/qt-5/qdragenterevent.html)). |
 | `QEvent::DragLeave`                        | `62`                  | The cursor leaves a widget during a drag and drop operation在拖，拽操作过程中鼠标光标离开widget区域([QDragLeaveEvent](https://doc.qt.io/qt-5/qdragleaveevent.html)). |
 | `QEvent::DragMove`                         | `61`                  | 正在发生拖，拽操作([QDragMoveEvent](https://doc.qt.io/qt-5/qdragmoveevent.html)). |
 | `QEvent::Drop`                             | `63`                  | 拖，拽操作已完成 ([QDropEvent](https://doc.qt.io/qt-5/qdropevent.html)). |
-| `QEvent::DynamicPropertyChange`            | `170`                 | A dynamic property was added, changed, or removed from the object某动态属性被添加进某个对象，或从该对象被删除以及此动态属性被改变. |
+| `QEvent::DynamicPropertyChange`            | `170`                 | 某动态属性被添加进某个对象，或从该对象被删除或此动态属性发生了改变 |
 | `QEvent::EnabledChange`                    | `98`                  | Widget的可用状态发生了改变.                                  |
 | `QEvent::Enter`                            | `10`                  | 鼠标进入了widget边界 ([QEnterEvent](https://doc.qt.io/qt-5/qenterevent.html)). |
-| `QEvent::EnterEditFocus`                   | `150`                 | 某个编辑类widget获得了输入焦点.需要定义`QT_KEYPAD_NAVIGATION`. |
-| `QEvent::EnterWhatsThisMode`               | `124`                 | Send to toplevel widgets when the application enters "What's This?" mode当应用进入“What's This”模式时会接收到此事件类型. |
-| `QEvent::Expose`                           | `206`                 | Sent to a window when its on-screen contents are invalidated and need to be flushed from the backing store. |
-| `QEvent::FileOpen`                         | `116`                 | File open request ([QFileOpenEvent](https://doc.qt.io/qt-5/qfileopenevent.html)). |
-| `QEvent::FocusIn`                          | `8`                   | Widget or Window gains keyboard focus ([QFocusEvent](https://doc.qt.io/qt-5/qfocusevent.html)). |
-| `QEvent::FocusOut`                         | `9`                   | Widget or Window loses keyboard focus ([QFocusEvent](https://doc.qt.io/qt-5/qfocusevent.html)). |
-| `QEvent::FocusAboutToChange`               | `23`                  | Widget or Window focus is about to change ([QFocusEvent](https://doc.qt.io/qt-5/qfocusevent.html)) |
-| `QEvent::FontChange`                       | `97`                  | Widget's font has changed.                                   |
-| `QEvent::Gesture`                          | `198`                 | A gesture was triggered ([QGestureEvent](https://doc.qt.io/qt-5/qgestureevent.html)). |
-| `QEvent::GestureOverride`                  | `202`                 | A gesture override was triggered ([QGestureEvent](https://doc.qt.io/qt-5/qgestureevent.html)). |
-| `QEvent::GrabKeyboard`                     | `188`                 | Item gains keyboard grab ([QGraphicsItem](https://doc.qt.io/qt-5/qgraphicsitem.html) only). |
-| `QEvent::GrabMouse`                        | `186`                 | Item gains mouse grab ([QGraphicsItem](https://doc.qt.io/qt-5/qgraphicsitem.html) only). |
-| `QEvent::GraphicsSceneContextMenu`         | `159`                 | Context popup menu over a graphics scene ([QGraphicsSceneContextMenuEvent](https://doc.qt.io/qt-5/qgraphicsscenecontextmenuevent.html)). |
-| `QEvent::GraphicsSceneDragEnter`           | `164`                 | The cursor enters a graphics scene during a drag and drop operation ([QGraphicsSceneDragDropEvent](https://doc.qt.io/qt-5/qgraphicsscenedragdropevent.html)). |
-| `QEvent::GraphicsSceneDragLeave`           | `166`                 | The cursor leaves a graphics scene during a drag and drop operation ([QGraphicsSceneDragDropEvent](https://doc.qt.io/qt-5/qgraphicsscenedragdropevent.html)). |
-| `QEvent::GraphicsSceneDragMove`            | `165`                 | A drag and drop operation is in progress over a scene ([QGraphicsSceneDragDropEvent](https://doc.qt.io/qt-5/qgraphicsscenedragdropevent.html)). |
-| `QEvent::GraphicsSceneDrop`                | `167`                 | A drag and drop operation is completed over a scene ([QGraphicsSceneDragDropEvent](https://doc.qt.io/qt-5/qgraphicsscenedragdropevent.html)). |
-| `QEvent::GraphicsSceneHelp`                | `163`                 | The user requests help for a graphics scene ([QHelpEvent](https://doc.qt.io/qt-5/qhelpevent.html)). |
-| `QEvent::GraphicsSceneHoverEnter`          | `160`                 | The mouse cursor enters a hover item in a graphics scene ([QGraphicsSceneHoverEvent](https://doc.qt.io/qt-5/qgraphicsscenehoverevent.html)). |
-| `QEvent::GraphicsSceneHoverLeave`          | `162`                 | The mouse cursor leaves a hover item in a graphics scene ([QGraphicsSceneHoverEvent](https://doc.qt.io/qt-5/qgraphicsscenehoverevent.html)). |
-| `QEvent::GraphicsSceneHoverMove`           | `161`                 | The mouse cursor moves inside a hover item in a graphics scene ([QGraphicsSceneHoverEvent](https://doc.qt.io/qt-5/qgraphicsscenehoverevent.html)). |
-| `QEvent::GraphicsSceneMouseDoubleClick`    | `158`                 | Mouse press again (double click) in a graphics scene ([QGraphicsSceneMouseEvent](https://doc.qt.io/qt-5/qgraphicsscenemouseevent.html)). |
-| `QEvent::GraphicsSceneMouseMove`           | `155`                 | Move mouse in a graphics scene ([QGraphicsSceneMouseEvent](https://doc.qt.io/qt-5/qgraphicsscenemouseevent.html)). |
-| `QEvent::GraphicsSceneMousePress`          | `156`                 | Mouse press in a graphics scene ([QGraphicsSceneMouseEvent](https://doc.qt.io/qt-5/qgraphicsscenemouseevent.html)). |
-| `QEvent::GraphicsSceneMouseRelease`        | `157`                 | Mouse release in a graphics scene ([QGraphicsSceneMouseEvent](https://doc.qt.io/qt-5/qgraphicsscenemouseevent.html)). |
-| `QEvent::GraphicsSceneMove`                | `182`                 | Widget was moved ([QGraphicsSceneMoveEvent](https://doc.qt.io/qt-5/qgraphicsscenemoveevent.html)). |
-| `QEvent::GraphicsSceneResize`              | `181`                 | Widget was resized ([QGraphicsSceneResizeEvent](https://doc.qt.io/qt-5/qgraphicssceneresizeevent.html)). |
-| `QEvent::GraphicsSceneWheel`               | `168`                 | Mouse wheel rolled in a graphics scene ([QGraphicsSceneWheelEvent](https://doc.qt.io/qt-5/qgraphicsscenewheelevent.html)). |
-| `QEvent::Hide`                             | `18`                  | Widget was hidden ([QHideEvent](https://doc.qt.io/qt-5/qhideevent.html)). |
-| `QEvent::HideToParent`                     | `27`                  | A child widget has been hidden.                              |
-| `QEvent::HoverEnter`                       | `127`                 | The mouse cursor enters a hover widget ([QHoverEvent](https://doc.qt.io/qt-5/qhoverevent.html)). |
-| `QEvent::HoverLeave`                       | `128`                 | The mouse cursor leaves a hover widget ([QHoverEvent](https://doc.qt.io/qt-5/qhoverevent.html)). |
-| `QEvent::HoverMove`                        | `129`                 | The mouse cursor moves inside a hover widget ([QHoverEvent](https://doc.qt.io/qt-5/qhoverevent.html)). |
-| `QEvent::IconDrag`                         | `96`                  | The main icon of a window has been dragged away ([QIconDragEvent](https://doc.qt.io/qt-5/qicondragevent.html)). |
-| `QEvent::IconTextChange`                   | `101`                 | Widget's icon text has been changed. (Deprecated)            |
-| `QEvent::InputMethod`                      | `83`                  | An input method is being used ([QInputMethodEvent](https://doc.qt.io/qt-5/qinputmethodevent.html)). |
-| `QEvent::InputMethodQuery`                 | `207`                 | A input method query event ([QInputMethodQueryEvent](https://doc.qt.io/qt-5/qinputmethodqueryevent.html)) |
-| `QEvent::KeyboardLayoutChange`             | `169`                 | The keyboard layout has changed.                             |
-| `QEvent::KeyPress`                         | `6`                   | Key press ([QKeyEvent](https://doc.qt.io/qt-5/qkeyevent.html)). |
-| `QEvent::KeyRelease`                       | `7`                   | Key release ([QKeyEvent](https://doc.qt.io/qt-5/qkeyevent.html)). |
-| `QEvent::LanguageChange`                   | `89`                  | The application translation changed.                         |
+| `QEvent::EnterEditFocus`                   | `150`                 | 某个编辑类widget获得了输入焦点.需要定义宏`QT_KEYPAD_NAVIGATION`. |
+| `QEvent::EnterWhatsThisMode`               | `124`                 | 当应用进入“What's This”模式时会接收到此事件类型.             |
+| `QEvent::Expose`                           | `206`                 | Sent to a window when its on-screen contents are invalidated and need to be flushed from the backing store当窗口的显示内容无效，需要从后台显存刷新时会接收到此事件. |
+| `QEvent::FileOpen`                         | `116`                 | 打开文件请求事件 ([QFileOpenEvent](https://doc.qt.io/qt-5/qfileopenevent.html)). |
+| `QEvent::FocusIn`                          | `8`                   | Widget或窗口获得键盘输入焦点 ([QFocusEvent](https://doc.qt.io/qt-5/qfocusevent.html)). |
+| `QEvent::FocusOut`                         | `9`                   | Widget或窗口丢失键盘输入焦点([QFocusEvent](https://doc.qt.io/qt-5/qfocusevent.html)). |
+| `QEvent::FocusAboutToChange`               | `23`                  | Widget或窗口焦点即将要发生改变 ([QFocusEvent](https://doc.qt.io/qt-5/qfocusevent.html)) |
+| `QEvent::FontChange`                       | `97`                  | Widget的字体发生了改变.                                      |
+| `QEvent::Gesture`                          | `198`                 | A gesture was triggered当某手势操作被触发 ([QGestureEvent](https://doc.qt.io/qt-5/qgestureevent.html)). |
+| `QEvent::GestureOverride`                  | `202`                 | A gesture override was triggered当某覆盖当前手势的操作被触发 ([QGestureEvent](https://doc.qt.io/qt-5/qgestureevent.html)). |
+| `QEvent::GrabKeyboard`                     | `188`                 | Item gains keyboard grab某项获得了键盘捕获权 ([QGraphicsItem](https://doc.qt.io/qt-5/qgraphicsitem.html) only). |
+| `QEvent::GrabMouse`                        | `186`                 | Item gains mouse grab某项获得了鼠标捕获权([QGraphicsItem](https://doc.qt.io/qt-5/qgraphicsitem.html) only). |
+| `QEvent::GraphicsSceneContextMenu`         | `159`                 | Context popup menu over a graphics scene在图形场景中显示上下文弹出菜单 ([QGraphicsSceneContextMenuEvent](https://doc.qt.io/qt-5/qgraphicsscenecontextmenuevent.html)). |
+| `QEvent::GraphicsSceneDragEnter`           | `164`                 | The cursor enters a graphics scene during a drag and drop operation在拖，拽操作过程中光标进入图形场景区域 ([QGraphicsSceneDragDropEvent](https://doc.qt.io/qt-5/qgraphicsscenedragdropevent.html)). |
+| `QEvent::GraphicsSceneDragLeave`           | `166`                 | The cursor leaves a graphics scene during a drag and drop operation在拖，拽操作过程中光标离开图形场景区域 ([QGraphicsSceneDragDropEvent](https://doc.qt.io/qt-5/qgraphicsscenedragdropevent.html)). |
+| `QEvent::GraphicsSceneDragMove`            | `165`                 | A drag and drop operation is in progress over a scene在图形场景区域上正在发生拖，拽操作 ([QGraphicsSceneDragDropEvent](https://doc.qt.io/qt-5/qgraphicsscenedragdropevent.html)). |
+| `QEvent::GraphicsSceneDrop`                | `167`                 | A drag and drop operation is completed over a scene在图形场景上拖，拽操作已完成 ([QGraphicsSceneDragDropEvent](https://doc.qt.io/qt-5/qgraphicsscenedragdropevent.html)). |
+| `QEvent::GraphicsSceneHelp`                | `163`                 | The user requests help for a graphics scene 用户请求关于图形场景的帮助信息([QHelpEvent](https://doc.qt.io/qt-5/qhelpevent.html)). |
+| `QEvent::GraphicsSceneHoverEnter`          | `160`                 | The mouse cursor enters a hover item in a graphics scene鼠标光标进入了图形场景中某个悬停节点区域 ([QGraphicsSceneHoverEvent](https://doc.qt.io/qt-5/qgraphicsscenehoverevent.html)). |
+| `QEvent::GraphicsSceneHoverLeave`          | `162`                 | The mouse cursor leaves a hover item in a graphics scene鼠标光标从图形场景中某个悬停项区域中离开 ([QGraphicsSceneHoverEvent](https://doc.qt.io/qt-5/qgraphicsscenehoverevent.html)). |
+| `QEvent::GraphicsSceneHoverMove`           | `161`                 | The mouse cursor moves inside a hover item in a graphics scene鼠标光标在图形场景中某个悬停节点区域内部移动 ([QGraphicsSceneHoverEvent](https://doc.qt.io/qt-5/qgraphicsscenehoverevent.html)). |
+| `QEvent::GraphicsSceneMouseDoubleClick`    | `158`                 | Mouse press again (double click) in a graphics scene在图形场景中执行鼠标双击操作 ([QGraphicsSceneMouseEvent](https://doc.qt.io/qt-5/qgraphicsscenemouseevent.html)). |
+| `QEvent::GraphicsSceneMouseMove`           | `155`                 | Move mouse in a graphics scene在图形场景中移动鼠标 ([QGraphicsSceneMouseEvent](https://doc.qt.io/qt-5/qgraphicsscenemouseevent.html)). |
+| `QEvent::GraphicsSceneMousePress`          | `156`                 | Mouse press in a graphics scene在图形场景中点击单击鼠标 ([QGraphicsSceneMouseEvent](https://doc.qt.io/qt-5/qgraphicsscenemouseevent.html)). |
+| `QEvent::GraphicsSceneMouseRelease`        | `157`                 | Mouse release in a graphics scene在图形场景中松开已按下的鼠标键 ([QGraphicsSceneMouseEvent](https://doc.qt.io/qt-5/qgraphicsscenemouseevent.html)). |
+| `QEvent::GraphicsSceneMove`                | `182`                 | Widget was movedWidget被移动 ([QGraphicsSceneMoveEvent](https://doc.qt.io/qt-5/qgraphicsscenemoveevent.html)). |
+| `QEvent::GraphicsSceneResize`              | `181`                 | Widget was resizedWidget被重新调整了大小 ([QGraphicsSceneResizeEvent](https://doc.qt.io/qt-5/qgraphicssceneresizeevent.html)). |
+| `QEvent::GraphicsSceneWheel`               | `168`                 | Mouse wheel rolled in a graphics scene在图形场景中执行鼠标滚轮操作 ([QGraphicsSceneWheelEvent](https://doc.qt.io/qt-5/qgraphicsscenewheelevent.html)). |
+| `QEvent::Hide`                             | `18`                  | Widget was hiddenWidget被隐藏 ([QHideEvent](https://doc.qt.io/qt-5/qhideevent.html)). |
+| `QEvent::HideToParent`                     | `27`                  | 某子widget被隐藏.                                            |
+| `QEvent::HoverEnter`                       | `127`                 | The mouse cursor enters a hover widget鼠标光标进入某悬停widget区域 ([QHoverEvent](https://doc.qt.io/qt-5/qhoverevent.html)). |
+| `QEvent::HoverLeave`                       | `128`                 | The mouse cursor leaves a hover widget鼠标光标从某悬停widget区域离开 ([QHoverEvent](https://doc.qt.io/qt-5/qhoverevent.html)). |
+| `QEvent::HoverMove`                        | `129`                 | The mouse cursor moves inside a hover widget鼠标光标在某悬停widget内部移动 ([QHoverEvent](https://doc.qt.io/qt-5/qhoverevent.html)). |
+| `QEvent::IconDrag`                         | `96`                  | The main icon of a window has been dragged away某窗口的主应用图标被拖拽走 ([QIconDragEvent](https://doc.qt.io/qt-5/qicondragevent.html)). |
+| `QEvent::IconTextChange`                   | `101`                 | Widget's icon text has been changedWidget的图标文本发生了改变. (已不再使用) |
+| `QEvent::InputMethod`                      | `83`                  | An input method is being used输入法正在被使用 ([QInputMethodEvent](https://doc.qt.io/qt-5/qinputmethodevent.html)). |
+| `QEvent::InputMethodQuery`                 | `207`                 | A input method query event输入法查询事件 ([QInputMethodQueryEvent](https://doc.qt.io/qt-5/qinputmethodqueryevent.html)) |
+| `QEvent::KeyboardLayoutChange`             | `169`                 | The keyboard layout has changed键盘布局发生了改变.           |
+| `QEvent::KeyPress`                         | `6`                   | Key press 键盘键按下([QKeyEvent](https://doc.qt.io/qt-5/qkeyevent.html)). |
+| `QEvent::KeyRelease`                       | `7`                   | Key release键盘键弹起 ([QKeyEvent](https://doc.qt.io/qt-5/qkeyevent.html)). |
+| `QEvent::LanguageChange`                   | `89`                  | The application translation changed应用程序的语言发生了改变（例如从中文文字显示变为英文文字显示）. |
 | `QEvent::LayoutDirectionChange`            | `90`                  | The direction of layouts changed.                            |
-| `QEvent::LayoutRequest`                    | `76`                  | Widget layout needs to be redone.                            |
-| `QEvent::Leave`                            | `11`                  | Mouse leaves widget's boundaries.                            |
-| `QEvent::LeaveEditFocus`                   | `151`                 | An editor widget loses focus for editing. QT_KEYPAD_NAVIGATION must be defined. |
-| `QEvent::LeaveWhatsThisMode`               | `125`                 | Send to toplevel widgets when the application leaves "What's This?" mode. |
-| `QEvent::LocaleChange`                     | `88`                  | The system locale has changed.                               |
-| `QEvent::NonClientAreaMouseButtonDblClick` | `176`                 | A mouse double click occurred outside the client area ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
-| `QEvent::NonClientAreaMouseButtonPress`    | `174`                 | A mouse button press occurred outside the client area ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
-| `QEvent::NonClientAreaMouseButtonRelease`  | `175`                 | A mouse button release occurred outside the client area ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
-| `QEvent::NonClientAreaMouseMove`           | `173`                 | A mouse move occurred outside the client area ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
-| `QEvent::MacSizeChange`                    | `177`                 | The user changed his widget sizes (macOS only).              |
-| `QEvent::MetaCall`                         | `43`                  | An asynchronous method invocation via [QMetaObject::invokeMethod](https://doc.qt.io/qt-5/qmetaobject.html#invokeMethod)(). |
-| `QEvent::ModifiedChange`                   | `102`                 | Widgets modification state has been changed.                 |
-| `QEvent::MouseButtonDblClick`              | `4`                   | Mouse press again ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
-| `QEvent::MouseButtonPress`                 | `2`                   | Mouse press ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
-| `QEvent::MouseButtonRelease`               | `3`                   | Mouse release ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
-| `QEvent::MouseMove`                        | `5`                   | Mouse move ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
-| `QEvent::MouseTrackingChange`              | `109`                 | The mouse tracking state has changed.                        |
-| `QEvent::Move`                             | `13`                  | Widget's position changed ([QMoveEvent](https://doc.qt.io/qt-5/qmoveevent.html)). |
+| `QEvent::LayoutRequest`                    | `76`                  | Widget layout needs to be redoneWidget需要被重新布局.        |
+| `QEvent::Leave`                            | `11`                  | Mouse leaves widget's boundaries鼠标离开Widget区域.          |
+| `QEvent::LeaveEditFocus`                   | `151`                 | 某编辑类widget丢失其输入焦点.必须定义宏 QT_KEYPAD_NAVIGATION . |
+| `QEvent::LeaveWhatsThisMode`               | `125`                 | Send to toplevel widgets when the application leaves "What's This?" mode当应用程序离开“What's This”模式时会接收到此事件. |
+| `QEvent::LocaleChange`                     | `88`                  | The system locale has changed操作系统语言环境发生了改变.     |
+| `QEvent::NonClientAreaMouseButtonDblClick` | `176`                 | A mouse double click occurred outside the client area在客户区域外发生了鼠标双击操作事件 ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
+| `QEvent::NonClientAreaMouseButtonPress`    | `174`                 | A mouse button press occurred outside the client area在客户区域外发生了鼠标单击操作事件 ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
+| `QEvent::NonClientAreaMouseButtonRelease`  | `175`                 | A mouse button release occurred outside the client area在客户区域外发生了鼠标按键释放事件 ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
+| `QEvent::NonClientAreaMouseMove`           | `173`                 | A mouse move occurred outside the client area在客户区域外发生了鼠标移动事件 ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
+| `QEvent::MacSizeChange`                    | `177`                 | The user changed his widget sizes用户改变了他/她的widget大小 (仅适用于macOS). |
+| `QEvent::MetaCall`                         | `43`                  | An asynchronous method invocation via 通过[QMetaObject::invokeMethod](https://doc.qt.io/qt-5/qmetaobject.html#invokeMethod)()执行的异步方法调用. |
+| `QEvent::ModifiedChange`                   | `102`                 | Widgets modification state has been changedWidget的修改状态发生了改变. |
+| `QEvent::MouseButtonDblClick`              | `4`                   | Mouse press again 再次点击鼠标([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
+| `QEvent::MouseButtonPress`                 | `2`                   | Mouse press点击鼠标 ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
+| `QEvent::MouseButtonRelease`               | `3`                   | Mouse release松开鼠标按键 ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
+| `QEvent::MouseMove`                        | `5`                   | Mouse move移动鼠标 ([QMouseEvent](https://doc.qt.io/qt-5/qmouseevent.html)). |
+| `QEvent::MouseTrackingChange`              | `109`                 | The mouse tracking state has changed鼠标轨迹状态发生了改变.  |
+| `QEvent::Move`                             | `13`                  | Widget's position changedWidget的相对位置发生了改变 ([QMoveEvent](https://doc.qt.io/qt-5/qmoveevent.html)). |
 | `QEvent::NativeGesture`                    | `197`                 | The system has detected a gesture ([QNativeGestureEvent](https://doc.qt.io/qt-5/qnativegestureevent.html)). |
 | `QEvent::OrientationChange`                | `208`                 | The screens orientation has changes ([QScreenOrientationChangeEvent](https://doc.qt.io/qt-5/qscreenorientationchangeevent.html)). |
 | `QEvent::Paint`                            | `12`                  | Screen update necessary ([QPaintEvent](https://doc.qt.io/qt-5/qpaintevent.html)). |
